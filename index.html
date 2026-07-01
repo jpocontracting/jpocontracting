@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="pvPageTitle">JPO Contracting Unlimited Inc. — Architecture · Engineering · Permits</title>
+  <meta id="pvPageDesc" name="description" content="Professional architecture, structural engineering, shop drawings and permit management services in Ontario, Canada." />
+
+  <!-- Idioma del sitio: siempre inicia en inglés (por defecto) -->
+  <script>
+    document.documentElement.setAttribute('lang', 'en');
+    window.__PV_INITIAL_LANG = 'en';
+  </script>
+
+  <!-- Google Fonts: Inter + Barlow Condensed (corporativo, industrial) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- AOS – librería de animaciones scroll (lightweight, CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+  <link rel="stylesheet" href="css/hero.css?v=8" />
+  <link rel="icon" type="image/webp" href="images/fabicon.webp" />
+  <link rel="preload" as="image" href="images/hero-bg.webp" fetchpriority="high" />
+</head>
+<body>
+
+<!-- =============================================
+     TOP BAR
+============================================= -->
+<div class="topbar" id="topbar">
+  <div class="topbar__inner">
+    <div class="topbar__left">
+      <span class="topbar__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/></svg>
+        <span data-i18n="topbar.licensed">Licensed in Ontario</span>
+      </span>
+      <span class="topbar__sep" aria-hidden="true">|</span>
+      <span class="topbar__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <span>Corp. No. 1000301452</span>
+      </span>
+      <span class="topbar__sep" aria-hidden="true">|</span>
+      <span class="topbar__item topbar__item--loc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span data-i18n="topbar.location">East York, Ontario, Canada</span>
+      </span>
+    </div>
+    <div class="topbar__right">
+      <a href="tel:+14378302999" class="topbar__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.76a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.72 16z"/></svg>
+        <span>+1 (437) 830-2999</span>
+      </a>
+      <span class="topbar__sep topbar__sep--lang" aria-hidden="true">|</span>
+      <div class="lang-toggle" id="pvSiteLang" role="group" aria-label="Language / Idioma">
+        <button type="button" class="lang-toggle__btn" data-site-lang="en" aria-pressed="true">EN</button>
+        <span class="lang-toggle__sep" aria-hidden="true">/</span>
+        <button type="button" class="lang-toggle__btn" data-site-lang="es" aria-pressed="false">ES</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================================
+     HEADER / NAV (superpuesto al hero)
+============================================= -->
+<div id="header-trigger" class="header-trigger" aria-hidden="true"></div>
+<header class="site-header" id="site-header">
+  <div class="site-header__inner">
+
+    <!-- Logo -->
+    <a href="#" class="site-header__logo" aria-label="JPO Contracting – Home">
+      <img src="images/hero-logo.webp" alt="Pavel Logo" class="site-header__logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" />
+      <span class="site-header__logo-text" style="display:none;">JPO Contracting</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="site-header__nav" id="main-nav" aria-label="Main navigation">
+      <ul class="site-header__nav-list">
+        <li><a href="#inicio" class="nav-link active" data-i18n="nav.home">Home</a></li>
+        <li><a href="#servicios" class="nav-link" data-i18n="nav.services">Services</a></li>
+        <li><a href="#soluciones" class="nav-link" data-i18n="nav.solutions">Solutions</a></li>
+        <li><a href="#proyectos" class="nav-link" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="#nosotros" class="nav-link" data-i18n="nav.about">About</a></li>
+        <li><a href="#contacto" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hamburger (mobile) -->
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+      <span class="hamburger__bar"></span>
+      <span class="hamburger__bar"></span>
+      <span class="hamburger__bar"></span>
+    </button>
+
+  </div>
+</header>
+
+<!-- =============================================
+     HERO SECTION
+============================================= -->
+<section class="hero" id="inicio" aria-label="Main hero">
+
+  <!-- Imagen de fondo existente — NO SE MODIFICA -->
+  <div class="hero__bg" aria-hidden="true" style="background-image:url('data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAACwAwCdASogAA0APu1oqk6ppiQiMAgBMB2JYgCdAGlWeysZ+5OD0AD+7e8E4u06lb8MK4GPWscoTAPPuMhUCVmZXxIjgwJ22r81UlODl/w+MKN+EQOB4QPQIX1uUu9Ux4V7WKWzuCn9ka1eIGscORO1kfsr8AAA');">
+    <img
+      src="images/hero-bg.webp"
+      alt=""
+      class="hero__bg-img"
+      fetchpriority="high"
+      decoding="async"
+    />
+    <!-- Gradiente overlay sobre la imagen (capa HTML, no toca la imagen) -->
+    <div class="hero__overlay" aria-hidden="true"></div>
+  </div>
+
+  <!-- Partículas decorativas (canvas) -->
+  <canvas class="hero__particles" id="hero-particles" aria-hidden="true"></canvas>
+
+  <!-- Contenido principal izquierda -->
+  <div class="hero__content">
+
+    <!-- Título corporativo -->
+    <h1 class="hero__title" data-aos="fade-right" data-aos-delay="200">
+      <span class="hero__title-word" data-i18n="hero.word1">Architecture</span>
+      <span class="hero__title-word hero__title-word--accent" data-i18n="hero.word2">Engineering</span>
+      <span class="hero__title-word" data-i18n="hero.word3">Permits</span>
+    </h1>
+
+    <!-- Subtítulo / descripción -->
+    <p class="hero__desc" data-aos="fade-right" data-aos-delay="350" data-i18n-html="hero.desc">
+      Experts in comprehensive solutions for commercial and<br class="hide-mobile" />
+      residential construction in Ontario, Canada.
+    </p>
+
+    <!-- Botones CTA -->
+    <div class="hero__actions" data-aos="fade-right" data-aos-delay="500">
+      <a href="#servicios" class="btn btn--primary" data-i18n="hero.ctaServices">
+        Our Services
+      </a>
+      <a href="#proyectos" class="btn btn--ghost">
+        <span data-i18n="hero.ctaProjects">View Projects</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="btn__icon"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero__scroll" aria-hidden="true">
+    <span class="hero__scroll-label">Scroll</span>
+    <div class="hero__scroll-line"></div>
+  </div>
+
+</section>
+
+<!-- =============================================
+     SECCIONES PLACEHOLDER (para que el nav funcione)
+============================================= -->
+<section id="servicios" class="services">
+  <div class="services__hero">
+    <img src="images/services-bg.webp" alt="" class="services__hero-img" loading="lazy" decoding="async" />
+    <div class="services__hero-overlay" aria-hidden="true"></div>
+    <div class="services__hero-content container">
+      <span class="services__eyebrow" data-i18n="services.eyebrow">Complete catalog</span>
+      <h2 class="services__title" data-i18n-html="services.title">More than 20 engineering solutions,<br>under one roof</h2>
+      <p class="services__subtitle" data-i18n="services.subtitle">
+        We support every phase of a project's life cycle: from the first technical study
+        through to the delivery of the work. Explore our areas of expertise.
+      </p>
+    </div>
+  </div>
+    </div>
+  </div>
+
+  <div class="catalog__grid container">
+
+    <details class="catalog-category">
+      <summary class="catalog-category__head">
+        <span class="catalog-category__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V9l4-4 4 4v12M13 21v-7h6v7"/></svg>
+        </span>
+        <span class="catalog-category__heading">
+          <h3 data-i18n="catalog.cat1.title">Structural Engineering &amp; Design</h3>
+          <p data-i18n="catalog.cat1.desc">Calculation, design and reinforcement of structures to international safety standards.</p>
+        </span>
+        <span class="catalog-category__count" data-i18n="catalog.cat1.count">5 services</span>
+        <span class="catalog-category__chevron">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </span>
+      </summary>
+      <ul class="catalog-category__list">
+        <li data-i18n="catalog.cat1.item1">Structural engineering for residential and commercial buildings</li>
+        <li data-i18n="catalog.cat1.item2">Structural design of buildings</li>
+        <li data-i18n="catalog.cat1.item3">Foundation design</li>
+        <li data-i18n="catalog.cat1.item4">Seismic engineering</li>
+        <li data-i18n="catalog.cat1.item5">Structural rehabilitation and reinforcement</li>
+      </ul>
+    </details>
+
+    <details class="catalog-category">
+      <summary class="catalog-category__head">
+        <span class="catalog-category__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <span class="catalog-category__heading">
+          <h3 data-i18n="catalog.cat2.title">Studies &amp; Technical Diagnostics</h3>
+          <p data-i18n="catalog.cat2.desc">Evaluation, inspection and expert assessment to support technical decisions with reliable data.</p>
+        </span>
+        <span class="catalog-category__count" data-i18n="catalog.cat2.count">5 services</span>
+        <span class="catalog-category__chevron">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </span>
+      </summary>
+      <ul class="catalog-category__list">
+        <li data-i18n="catalog.cat2.item1">Geotechnical studies</li>
+        <li data-i18n="catalog.cat2.item2">Structural inspection of buildings</li>
+        <li data-i18n="catalog.cat2.item3">Technical infrastructure audits</li>
+        <li data-i18n="catalog.cat2.item4">Structural expert assessments</li>
+        <li data-i18n="catalog.cat2.item5">Technical feasibility studies</li>
+      </ul>
+    </details>
+
+    <details class="catalog-category">
+      <summary class="catalog-category__head">
+        <span class="catalog-category__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M9 3h6v3H9z"/><path d="m9.5 13 2 2 3.5-3.5"/></svg>
+        </span>
+        <span class="catalog-category__heading">
+          <h3 data-i18n="catalog.cat3.title">Project Management &amp; Supervision</h3>
+          <p data-i18n="catalog.cat3.desc">Technical and administrative coordination so every stage advances in compliance with code.</p>
+        </span>
+        <span class="catalog-category__count" data-i18n="catalog.cat3.count">4 services</span>
+        <span class="catalog-category__chevron">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </span>
+      </summary>
+      <ul class="catalog-category__list">
+        <li data-i18n="catalog.cat3.item1">Technical supervision of construction works</li>
+        <li data-i18n="catalog.cat3.item2">Construction project management</li>
+        <li data-i18n="catalog.cat3.item3">Specialized technical consulting</li>
+        <li data-i18n="catalog.cat3.item4">Comprehensive permit and technical documentation management</li>
+      </ul>
+    </details>
+
+    <details class="catalog-category">
+      <summary class="catalog-category__head">
+        <span class="catalog-category__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l4-3v17M13 21V11l6-4v14"/></svg>
+        </span>
+        <span class="catalog-category__heading">
+          <h3 data-i18n="catalog.cat4.title">Engineering by Building Type</h3>
+          <p data-i18n="catalog.cat4.desc">Specialized solutions based on the use, scale and complexity of the property.</p>
+        </span>
+        <span class="catalog-category__count" data-i18n="catalog.cat4.count">6 services</span>
+        <span class="catalog-category__chevron">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </span>
+      </summary>
+      <ul class="catalog-category__list">
+        <li data-i18n="catalog.cat4.item1">Engineering for industrial facilities</li>
+        <li data-i18n="catalog.cat4.item2">Engineering for office buildings</li>
+        <li data-i18n="catalog.cat4.item3">Engineering for hospitals and private clinics</li>
+        <li data-i18n="catalog.cat4.item4">Engineering for hotels and resorts</li>
+        <li data-i18n="catalog.cat4.item5">Engineering for shopping centers</li>
+        <li data-i18n="catalog.cat4.item6">Urban infrastructure design</li>
+      </ul>
+    </details>
+
+  </div>
+
+  <div class="catalog__cta container">
+    <p data-i18n="catalog.ctaText">Can't find the exact service you need?</p>
+    <a href="#contacto" class="btn btn--primary" data-i18n="catalog.ctaBtn">Request a Proposal</a>
+  </div>
+</section>
+
+  <!-- Mini-hero con imagen de fondo -->
+  <section id="soluciones" class="solutions">
+  <div class="solutions__hero">
+    <img src="images/solutions-bg.webp" alt="" class="solutions__hero-img" loading="lazy" decoding="async" />
+    <div class="solutions__hero-overlay" aria-hidden="true"></div>
+    <div class="solutions__hero-content container">
+      <span class="solutions__eyebrow" data-i18n="solutions.eyebrow">How we deliver it</span>
+      <h2 class="solutions__title" data-i18n-html="solutions.title">Technical excellence<br>at every stage of the process</h2>
+      <p class="solutions__subtitle" data-i18n="solutions.subtitle">
+        We combine cutting-edge architecture, rigorous engineering and permit management
+        to deliver measurable results at every stage of the construction cycle in Ontario.
+      </p>
+    </div>
+  </div>
+
+  <!-- Grid de soluciones -->
+  <div class="solutions__grid container">
+
+    <article class="solution-card solution-card--featured" tabindex="0" role="button" aria-pressed="false" aria-label="360° coordination from day one. Tap for more information." data-i18n-aria-label="solutions.card1.ariaLabel">
+      <div class="solution-card__inner">
+        <div class="solution-card__face solution-card__face--front">
+          <div class="solution-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3 data-i18n="solutions.card1.frontTitle">360° Coordination from Day One</h3>
+          <p data-i18n="solutions.card1.frontDesc">Architecture, structure and permits move forward in parallel under one team. We catch conflicts before they reach the job site, avoiding delays and cost overruns.</p>
+          <span class="solution-card__hint" data-i18n="solutions.hintMore">Tap for more information</span>
+        </div>
+        <div class="solution-card__face solution-card__face--back">
+          <h3 data-i18n="solutions.card1.backTitle">What you get in practice</h3>
+          <p data-i18n="solutions.card1.backDesc">A digital model of your project available for review at any time, weekly progress reports, and a documented history of every technical decision for your records.</p>
+          <span class="solution-card__hint" data-i18n="solutions.hintBack">Tap to go back</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="solution-card" tabindex="0" role="button" aria-pressed="false" aria-label="Savings that pay off long term. Tap for more information." data-i18n-aria-label="solutions.card2.ariaLabel">
+      <div class="solution-card__inner">
+        <div class="solution-card__face solution-card__face--front">
+          <div class="solution-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          </div>
+          <h3 data-i18n="solutions.card2.frontTitle">Savings that pay off long term</h3>
+          <p data-i18n="solutions.card2.frontDesc">We design with energy efficiency and certified materials, reducing your property's operating costs long after the work is delivered.</p>
+          <span class="solution-card__hint" data-i18n="solutions.hintMore">Tap for more information</span>
+        </div>
+        <div class="solution-card__face solution-card__face--back">
+          <h3 data-i18n="solutions.card2.backTitle">Incentives that maximize your investment</h3>
+          <p data-i18n="solutions.card2.backDesc">We advise you on documentation for tax credits and energy-efficiency programs available in Ontario, and project the estimated return before you build.</p>
+          <span class="solution-card__hint" data-i18n="solutions.hintBack">Tap to go back</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="solution-card" tabindex="0" role="button" aria-pressed="false" aria-label="A single point of contact. Tap for more information." data-i18n-aria-label="solutions.card3.ariaLabel">
+      <div class="solution-card__inner">
+        <div class="solution-card__face solution-card__face--front">
+          <div class="solution-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 data-i18n="solutions.card3.frontTitle">A single point of contact</h3>
+          <p data-i18n="solutions.card3.frontDesc">A dedicated advisor follows your entire project, so you don't have to coordinate yourself between architects, engineers and municipal paperwork.</p>
+          <span class="solution-card__hint" data-i18n="solutions.hintMore">Tap for more information</span>
+        </div>
+        <div class="solution-card__face solution-card__face--back">
+          <h3 data-i18n="solutions.card3.backTitle">Real availability, not just promises</h3>
+          <p data-i18n="solutions.card3.backDesc">Direct line to your senior advisor with a guaranteed response in under 24 hours. Receive status reports without having to ask for them yourself.</p>
+          <span class="solution-card__hint" data-i18n="solutions.hintBack">Tap to go back</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="solution-card" tabindex="0" role="button" aria-pressed="false" aria-label="Less risk, more peace of mind. Tap for more information." data-i18n-aria-label="solutions.card4.ariaLabel">
+      <div class="solution-card__inner">
+        <div class="solution-card__face solution-card__face--front">
+          <div class="solution-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 data-i18n="solutions.card4.frontTitle">Less risk, more peace of mind</h3>
+          <p data-i18n="solutions.card4.frontDesc">We identify and resolve technical and regulatory risks before they become problems, protecting your budget and your schedule.</p>
+          <span class="solution-card__hint" data-i18n="solutions.hintMore">Tap for more information</span>
+        </div>
+        <div class="solution-card__face solution-card__face--back">
+          <h3 data-i18n="solutions.card4.backTitle">Backed in writing</h3>
+          <p data-i18n="solutions.card4.backDesc">We carry professional liability insurance. If a design error is ours, we fix it at no extra cost to you — that's established in the contract.</p>
+          <span class="solution-card__hint" data-i18n="solutions.hintBack">Tap to go back</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="solution-card" tabindex="0" role="button" aria-pressed="false" aria-label="Schedules that are kept. Tap for more information." data-i18n-aria-label="solutions.card5.ariaLabel">
+      <div class="solution-card__inner">
+        <div class="solution-card__face solution-card__face--front">
+          <div class="solution-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3 data-i18n="solutions.card5.frontTitle">Schedules that are kept</h3>
+          <p data-i18n="solutions.card5.frontDesc">Constant monitoring of every stage to reach the promised delivery date, with no last-minute surprises.</p>
+          <span class="solution-card__hint" data-i18n="solutions.hintMore">Tap for more information</span>
+        </div>
+        <div class="solution-card__face solution-card__face--back">
+          <h3 data-i18n="solutions.card5.backTitle">A measurable commitment</h3>
+          <p data-i18n="solutions.card5.backDesc">We work with contracts based on verifiable milestones. 98% of our projects are delivered on the agreed date, a track record we back with references from past clients.</p>
+          <span class="solution-card__hint" data-i18n="solutions.hintBack">Tap to go back</span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+<section id="proyectos" class="projects">
+
+  <!-- Mini-hero imagen de fondo -->
+  <div class="projects__hero">
+    <img src="images/projects-bg.webp" alt="Engineers reviewing blueprints on site at sunset" class="projects__hero-img" loading="lazy" decoding="async" />
+    <div class="projects__hero-overlay" aria-hidden="true"></div>
+    <div class="projects__hero-content container">
+      <span class="projects__eyebrow" data-i18n="projects.eyebrow">Portfolio of work</span>
+      <h2 class="projects__title" data-i18n-html="projects.title">Projects that<br>define our track record</h2>
+      <p class="projects__subtitle" data-i18n="projects.subtitle">
+        Every project is evidence of our technical capability, rigor in execution,
+        and commitment to the highest standards of engineering and construction in Ontario.
+      </p>
+    </div>
+  </div>
+
+  <!-- Métricas globales -->
+  <div class="projects__stats container">
+    <div class="pstat">
+      <div class="pstat__icon-wrap">
+        <svg class="pstat__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
+      </div>
+      <span class="pstat__num"><span class="pstat__prefix">+</span><span class="pstat__num-value" data-stat="proyectos" data-count="34">0</span></span>
+      <span class="pstat__divider" aria-hidden="true"></span>
+      <span class="pstat__label" data-i18n="projects.stat1Label">Projects delivered</span>
+    </div>
+    <div class="pstat">
+      <div class="pstat__icon-wrap">
+        <svg class="pstat__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+      </div>
+      <span class="pstat__num"><span class="pstat__prefix">+</span><span class="pstat__num-value" data-stat="anios" data-count="3">0</span></span>
+      <span class="pstat__divider" aria-hidden="true"></span>
+      <span class="pstat__label" data-i18n="projects.stat2Label">Years of experience</span>
+    </div>
+    <div class="pstat pstat--flip" tabindex="0" role="button" aria-pressed="false" aria-label="On-time delivery. Tap for more detail." data-i18n-aria-label="projects.stat3.ariaLabel">
+      <div class="pstat__flip-inner">
+        <div class="pstat__flip-face pstat__flip-face--front">
+          <div class="pstat__icon-wrap">
+            <svg class="pstat__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          </div>
+          <span class="pstat__num"><span class="pstat__num-value" data-count="100">0</span><span class="pstat__suffix">%</span></span>
+          <span class="pstat__divider" aria-hidden="true"></span>
+          <span class="pstat__label" data-i18n="projects.stat3Label">On-time delivery</span>
+        </div>
+        <div class="pstat__flip-face pstat__flip-face--back">
+          <p class="pstat__flip-text" data-i18n="projects.stat3Back">If something unexpected comes up — almost always outside our control — we discuss it with you in advance and with total transparency. That's how we keep our deliveries always on time.</p>
+        </div>
+      </div>
+    </div>
+    <div class="pstat">
+      <div class="pstat__icon-wrap">
+        <svg class="pstat__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <span class="pstat__num pstat__num--text">Ontario</span>
+      <span class="pstat__divider" aria-hidden="true"></span>
+      <span class="pstat__label" data-i18n="projects.stat4Label">Operating jurisdiction</span>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="projects__cta-panel container">
+    <div class="projects__cta-glow" aria-hidden="true"></div>
+    <div class="projects__cta-text">
+      <h3 data-i18n="projects.ctaTitle">Have a project in mind?</h3>
+    </div>
+    <div class="projects__cta-actions">
+      <a href="#contacto" class="btn btn--primary" data-i18n="projects.ctaBtn1">Request a Consultation</a>
+      <a href="#soluciones" class="btn btn--ghost" data-i18n="projects.ctaBtn2">How We Work</a>
+    </div>
+  </div>
+
+</section>
+<section id="nosotros" class="about">
+
+  <!-- Mini-hero imagen de fondo -->
+  <div class="about__hero">
+    <img src="images/nosotros-bg.webp" alt="Pavel team watching the sunset on the horizon" class="about__hero-img" loading="lazy" decoding="async" />
+    <div class="about__hero-overlay" aria-hidden="true"></div>
+    <div class="about__hero-content container">
+      <span class="about__eyebrow" data-i18n="about.eyebrow">Who we are</span>
+      <h2 class="about__title" data-i18n-html="about.title">A team that<br>builds with purpose</h2>
+      <p class="about__subtitle" data-i18n="about.subtitle">
+        Based in East York, Ontario and legally incorporated since 2022,
+        we combine technical expertise and local knowledge to deliver efficient solutions.
+      </p>
+
+      <ul class="about__credentials">
+        <li>
+          <span class="about__credentials-label" data-i18n="about.cred1Label">Founded</span>
+          <span class="about__credentials-value">2022</span>
+        </li>
+        <li>
+          <span class="about__credentials-label" data-i18n="about.cred2Label">Headquarters</span>
+          <span class="about__credentials-value">East York, Ontario</span>
+        </li>
+        <li>
+          <span class="about__credentials-label" data-i18n="about.cred3Label">Legal entity</span>
+          <span class="about__credentials-value">Business Corporations Act</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Historia + valores -->
+  <div class="about__body container">
+
+    <div class="about__story">
+      <span class="about__story-kicker" data-i18n="about.storyKicker">Our story</span>
+      <p class="about__story-lead" data-i18n="about.storyLead">
+        JPO Contracting Unlimited Inc. was born from the conviction that every project
+        deserves professional, high-level attention.
+      </p>
+      <p data-i18n="about.storyP1">
+        Based in East York, Ontario, and legally incorporated in 2022 under the
+        Business Corporations Act, our team combines technical expertise and
+        deep knowledge of local regulations to deliver efficient and safe solutions.
+      </p>
+      <p data-i18n="about.storyP2">
+        We specialize in architectural design, structural engineering, shop drawings
+        and permit management for commercial and residential projects in Ontario.
+        Our commitment is to quality, regulatory compliance and the
+        complete satisfaction of our clients.
+      </p>
+    </div>
+
+    <div class="about__values">
+      <div class="value-row">
+        <span class="value-row__index">01</span>
+        <div class="value-row__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 4.5v9L12 22l-9-6.5v-9L12 2z"/><path d="M12 8v8M8 11l4-3 4 3"/></svg>
+        </div>
+        <div class="value-row__text">
+          <h4 data-i18n="about.value1Title">Excellence</h4>
+          <p data-i18n="about.value1Desc">Every project is executed to the highest standards of quality and engineering.</p>
+        </div>
+      </div>
+
+      <div class="value-row">
+        <span class="value-row__index">02</span>
+        <div class="value-row__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="value-row__text">
+          <h4 data-i18n="about.value2Title">Integrity</h4>
+          <p data-i18n="about.value2Desc">Transparency and real commitment to every client, at every stage of the process.</p>
+        </div>
+      </div>
+
+      <div class="value-row">
+        <span class="value-row__index">03</span>
+        <div class="value-row__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+        </div>
+        <div class="value-row__text">
+          <h4 data-i18n="about.value3Title">Innovation</h4>
+          <p data-i18n="about.value3Desc">We adopt cutting-edge technology to solve the most complex challenges.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+<section id="contacto" class="contact">
+
+  <!-- Mini-hero imagen de fondo -->
+  <div class="contact__hero">
+    <img src="images/contacto-bg.webp" alt="" class="contact__hero-img" loading="lazy" decoding="async" />
+    <div class="contact__hero-overlay" aria-hidden="true"></div>
+    <div class="contact__hero-content contact__hero-content--split container">
+
+      <div class="contact__hero-text">
+        <span class="contact__eyebrow" data-i18n="contact.eyebrow">Let's talk</span>
+        <h2 class="contact__title" data-i18n-html="contact.title">Ready to start<br>your next project?</h2>
+        <p class="contact__subtitle" data-i18n="contact.subtitle">
+          Contact us and discover how we can help you build the future.
+        </p>
+
+        <ul class="contact__info-list">
+          <li class="contact__info-item">
+            <span class="contact__info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.76a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.72 16z"/></svg>
+            </span>
+            <span class="contact__info-text">
+              <span class="contact__info-label" data-i18n="contact.phoneLabel">Phone</span>
+              <a href="tel:+14378302999">+1 (437) 830-2999</a>
+            </span>
+          </li>
+          <li class="contact__info-item">
+            <span class="contact__info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <span class="contact__info-text">
+              <span class="contact__info-label" data-i18n="contact.officeLabel">Office</span>
+              <span>29 Lankin Blvd, East York, ON M4J 4W7</span>
+            </span>
+          </li>
+        </ul>
+
+        <div class="contact__actions">
+          <a href="tel:+14378302999" class="btn btn--primary">
+            <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.76a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.72 16z"/></svg>
+            <span data-i18n="contact.callNow">Call Now</span>
+          </a>
+          <a href="https://www.google.com/maps/search/?api=1&query=29+Lankin+Blvd%2C+East+York%2C+ON+M4J+4W7" target="_blank" rel="noopener" class="btn btn--ghost">
+            <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-i18n="contact.getDirections">Get Directions</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-card" id="contact-form">
+        <div class="contact-card__head">
+          <span class="contact-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </span>
+          <div>
+            <h3 class="contact-card__title" data-i18n="contact.formTitle">Send us an email</h3>
+            <p class="contact-card__subtitle" data-i18n="contact.formSubtitle">Response within the next business day</p>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="b76bda33-f36c-4eee-991b-c39bfbedcf0f" />
+          <input type="hidden" name="subject" value="New contact from jpocontracting.com" />
+          <input type="hidden" name="from_name" value="JPO Contracting Form" />
+          <input type="checkbox" name="botcheck" class="contact-form__honeypot" tabindex="-1" autocomplete="off" />
+
+          <div class="contact-form__row">
+            <div class="contact-form__field">
+              <label for="cf-name" data-i18n="contact.fieldName">Name</label>
+              <input type="text" id="cf-name" name="name" placeholder="Your name" data-i18n-placeholder="contact.placeholderName" required />
+            </div>
+            <div class="contact-form__field">
+              <label for="cf-email" data-i18n="contact.fieldEmail">Email</label>
+              <input type="email" id="cf-email" name="email" placeholder="you@email.com" data-i18n-placeholder="contact.placeholderEmail" required />
+            </div>
+          </div>
+
+          <div class="contact-form__field">
+            <label for="cf-phone"><span data-i18n="contact.fieldPhone">Phone</span> <span data-i18n="contact.fieldOptional">(optional)</span></label>
+            <input type="tel" id="cf-phone" name="phone" placeholder="+1 (000) 000-0000" />
+          </div>
+
+          <div class="contact-form__field">
+            <label for="cf-message" data-i18n="contact.fieldMessage">Message</label>
+            <textarea id="cf-message" name="message" rows="4" placeholder="Tell us about your project..." data-i18n-placeholder="contact.placeholderMessage" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary contact-form__submit">
+            <span class="contact-form__submit-text" data-i18n="contact.sendBtn">Send Message</span>
+            <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+
+          <p class="contact-form__status" id="contactFormStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<script>
+(function () {
+  'use strict';
+  var form   = document.getElementById('contactForm');
+  var status = document.getElementById('contactFormStatus');
+  if (!form) return;
+
+  var MSGS = {
+    en: {
+      sending: 'Sending…',
+      success: 'Message sent! We will get back to you soon.',
+      error: 'Could not send the message. Please try again or email us at official@jpocontracting.com'
+    },
+    es: {
+      sending: 'Enviando...',
+      success: '¡Mensaje enviado! Le responderemos pronto.',
+      error: 'No se pudo enviar. Intente de nuevo o escríbanos a official@jpocontracting.com'
+    }
+  };
+  function lang() {
+    return document.documentElement.getAttribute('lang') === 'es' ? 'es' : 'en';
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var submitBtn = form.querySelector('.contact-form__submit');
+    var submitTxt = form.querySelector('.contact-form__submit-text');
+    var originalTxt = submitTxt.textContent;
+    var m = MSGS[lang()];
+
+    submitBtn.disabled = true;
+    submitTxt.textContent = m.sending;
+    status.textContent = '';
+    status.className = 'contact-form__status';
+
+    var data = new FormData(form);
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    })
+      .then(function (res) { return res.json(); })
+      .then(function (json) {
+        if (json.success) {
+          status.textContent = m.success;
+          status.className = 'contact-form__status contact-form__status--ok';
+          form.reset();
+        } else {
+          throw new Error(json.message || 'Send error');
+        }
+      })
+      .catch(function () {
+        status.textContent = m.error;
+        status.className = 'contact-form__status contact-form__status--error';
+      })
+      .finally(function () {
+        submitBtn.disabled = false;
+        submitTxt.textContent = originalTxt;
+      });
+  });
+})();
+</script>
+
+<!-- =============================================
+     FOOTER EJECUTIVO
+============================================= -->
+<footer class="site-footer" id="site-footer">
+  <div class="site-footer__top container">
+
+    <div class="site-footer__brand">
+      <a href="#inicio" class="site-footer__logo" aria-label="JPO Contracting – Home">
+        <img src="images/hero-logo.webp" alt="Pavel Logo" class="site-footer__logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" />
+        <span class="site-footer__logo-text" style="display:none;">JPO Contracting</span>
+      </a>
+      <p class="site-footer__tagline" data-i18n="footer.tagline">
+        Architecture, engineering and permit management for commercial and residential projects in Ontario, Canada.
+      </p>
+    </div>
+
+    <nav class="site-footer__col" aria-label="Footer navigation">
+      <h3 class="site-footer__heading" data-i18n="footer.navHeading">Navigation</h3>
+      <ul class="site-footer__list">
+        <li><a href="#inicio" data-i18n="nav.home">Home</a></li>
+        <li><a href="#servicios" data-i18n="nav.services">Services</a></li>
+        <li><a href="#soluciones" data-i18n="nav.solutions">Solutions</a></li>
+        <li><a href="#proyectos" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="#nosotros" data-i18n="nav.about">About</a></li>
+      </ul>
+    </nav>
+
+    <nav class="site-footer__col" aria-label="Areas of expertise">
+      <h3 class="site-footer__heading" data-i18n="footer.specHeading">Expertise</h3>
+      <ul class="site-footer__list">
+        <li><a href="#servicios" data-i18n="footer.spec1">Structural engineering and design</a></li>
+        <li><a href="#servicios" data-i18n="footer.spec2">Studies and technical diagnostics</a></li>
+        <li><a href="#servicios" data-i18n="footer.spec3">Project management and supervision</a></li>
+        <li><a href="#servicios" data-i18n="footer.spec4">Engineering by building type</a></li>
+      </ul>
+    </nav>
+
+    <div class="site-footer__col">
+      <h3 class="site-footer__heading" data-i18n="footer.contactHeading">Contact</h3>
+      <ul class="site-footer__list">
+        <li>
+          <a href="tel:+14378302999">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.76a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.72 16z"/></svg>
+            +1 (437) 830-2999
+          </a>
+        </li>
+        <li>
+          <a href="mailto:official@jpocontracting.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            official@jpocontracting.com
+          </a>
+        </li>
+        <li>
+          <a href="https://www.google.com/maps/search/?api=1&query=29+Lankin+Blvd%2C+East+York%2C+ON+M4J+4W7" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            29 Lankin Blvd, East York, ON M4J 4W7
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="site-footer__bottom container">
+    <p><span data-i18n="footer.copyrightPrefix">&copy;</span> <span id="footer-year"></span> <span data-i18n="footer.copyrightText">JPO Contracting Unlimited Inc. All rights reserved. &nbsp;·&nbsp; Corporation registered in Ontario, Canada &nbsp;·&nbsp; No. 1000301452</span></p>
+    <button class="site-footer__back-top" id="back-top" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+    </button>
+  </div>
+</footer>
+
+<!-- Barra de progreso de scroll -->
+<div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+<!-- =============================================
+     CHATBOT WIDGET
+     INSTRUCCIONES:
+     1. Pegar este bloque completo justo antes de </body> en index.html
+     2. Agregar el contenido de "pavel-chatbot.css" al final de css/hero.css
+     3. Agregar el contenido de "pavel-chatbot.js"  al final de js/scroll.js
+     4. La base de conocimiento vive en js/pavel-chatbot-data.js
+        (debe cargarse ANTES de js/scroll.js). Editar SOLO ese archivo
+        para enriquecer preguntas/respuestas, fallback y contacto.
+============================================= -->
+
+<!-- Botón flotante del chat -->
+<button class="pv-chat-fab" id="pvChatFab" aria-label="Open chat assistant" aria-expanded="false">
+  <span class="pv-chat-fab__badge" id="pvChatBadge" aria-hidden="true">1</span>
+  <!-- Ícono chat (reposa) -->
+  <svg class="pv-chat-fab__ico pv-chat-fab__ico--chat" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="9"  cy="10" r="1" fill="currentColor"/>
+    <circle cx="12" cy="10" r="1" fill="currentColor"/>
+    <circle cx="15" cy="10" r="1" fill="currentColor"/>
+  </svg>
+  <!-- Ícono X (abierto) -->
+  <svg class="pv-chat-fab__ico pv-chat-fab__ico--x" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <line x1="18" y1="6" x2="6"  y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="6"  y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+  </svg>
+</button>
+
+<!-- Panel del chatbot -->
+<div class="pv-chat" id="pvChat" role="dialog" aria-label="Leo virtual assistant" aria-hidden="true">
+
+  <!-- Header -->
+  <div class="pv-chat__header">
+    <div class="pv-chat__hdr-av">
+      <img src="images/leo.webp" alt="Leo" class="pv-chat__hdr-av-img" />
+    </div>
+    <div class="pv-chat__hdr-info">
+      <div class="pv-chat__hdr-name">Leo</div>
+      <div class="pv-chat__hdr-status">
+        <span class="pv-chat__dot"></span>
+        <span id="pvStatusText">Online</span>
+      </div>
+    </div>
+    <!-- Selector de idioma -->
+    <div class="pv-lang" id="pvLang" aria-label="Idioma / Language">
+      <button class="pv-lang__btn" data-lang="es" aria-pressed="false">ES</button>
+      <span class="pv-lang__sep" aria-hidden="true">|</span>
+      <button class="pv-lang__btn is-active" data-lang="en" aria-pressed="true">EN</button>
+    </div>
+    <button class="pv-chat__hdr-x" id="pvChatClose" aria-label="Close chat">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <line x1="18" y1="6" x2="6"  y2="18" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="6"  y1="6" x2="18" y2="18" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mensajes -->
+  <div class="pv-chat__messages" id="pvChatMessages" role="log" aria-live="polite" aria-relevant="additions">
+    <!-- Los mensajes se insertan por JS -->
+  </div>
+
+  <!-- Quick replies (preguntas frecuentes sugeridas) -->
+  <div class="pv-chat__quick" id="pvChatQuick" aria-label="Frequently asked questions">
+    <button class="pv-chat__qr" data-q-es="¿Qué servicios ofrecen?"     data-q-en="What services do you offer?"    data-q="What services do you offer?">Services</button>
+    <button class="pv-chat__qr" data-q-es="¿Cómo solicito una propuesta?" data-q-en="How do I request a proposal?"   data-q="How do I request a proposal?">Proposal</button>
+    <button class="pv-chat__qr" data-q-es="¿En qué países operan?"        data-q-en="Which countries do you operate in?" data-q="Which countries do you operate in?">Coverage</button>
+    <button class="pv-chat__qr" data-q-es="¿Cuánto tiempo tarda un proyecto?" data-q-en="How long does a project take?" data-q="How long does a project take?">Timeline</button>
+    <button class="pv-chat__qr" data-q-es="Hablar con un asesor"          data-q-en="Talk to an advisor"             data-q="Talk to an advisor">Advisor</button>
+  </div>
+
+  <!-- Input bar -->
+  <div class="pv-chat__bar">
+    <textarea
+      class="pv-chat__input"
+      id="pvChatInput"
+      placeholder="Type your question…"
+      rows="1"
+      maxlength="600"
+      aria-label="Message"
+    ></textarea>
+    <button class="pv-chat__send" id="pvChatSend" aria-label="Send message">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <line x1="22" y1="2" x2="11" y2="13" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        <polygon points="22 2 15 22 11 13 2 9 22 2" fill="#fff"/>
+      </svg>
+    </button>
+  </div>
+  <div class="pv-chat__foot" id="pvChatFoot">Leo · Virtual Assistant · automated responses</div>
+
+</div>
+<!-- /CHATBOT WIDGET -->
+
+<!-- =============================================
+     SCRIPTS
+============================================= -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="bot/data.js?v=1"></script>
+<script src="bot/data-en.js?v=1"></script>
+<script src="js/i18n-data.js?v=2"></script>
+<script src="js/i18n.js?v=3"></script>
+<script src="js/hero.js?v=3"></script>
+<script src="bot/conceptnet-module.js?v=1"></script>
+<script src="js/scroll.js?v=5"></script>
+</body>
+</html>

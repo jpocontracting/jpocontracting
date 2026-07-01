@@ -1,0 +1,378 @@
+/* ═══════════════════════════════════════════════
+   JPO CONTRACTING — Building Beyond Standards
+   style.css
+═══════════════════════════════════════════════ */
+
+/* ── Reset & Variables ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --gold:    #F5A800;
+  --gold-dk: #C88200;
+  --blue:    #0A2A6E;
+  --blue-lt: #1040A0;
+  --white:   #FFFFFF;
+  --dark:    #0D0D0D;
+  --card-bg: rgba(8, 20, 50, 0.72);
+  --card-border: rgba(245, 168, 0, 0.25);
+  --radius:  16px;
+
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body:    'Barlow', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--dark);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+/* ═══════════════════════════════════════════════
+   SECCIÓN HERO
+═══════════════════════════════════════════════ */
+.hero-section {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-image-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform-origin: center center;
+  /* El JS controla transform y opacity */
+  will-change: transform, opacity;
+  transition: none; /* JS maneja la animación suavemente con rAF */
+}
+
+/* ── Scroll hint ── */
+.scroll-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 10;
+}
+
+.scroll-hint.hidden {
+  opacity: 0;
+}
+
+.scroll-arrow {
+  width: 28px;
+  animation: bounceArrow 1.6s ease-in-out infinite;
+}
+
+.scroll-arrow svg {
+  width: 100%;
+  height: auto;
+  color: var(--gold);
+}
+
+@keyframes bounceArrow {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
+}
+
+/* ═══════════════════════════════════════════════
+   SECCIÓN SERVICIOS
+═══════════════════════════════════════════════ */
+.services-section {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  padding: 6rem 2rem 5rem;
+}
+
+/* ── Fondo blur ── */
+.services-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.services-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  filter: blur(14px) brightness(0.35) saturate(1.2);
+  transform: scale(1.08); /* evita bordes blancos del blur */
+  will-change: filter;
+}
+
+.services-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom,
+      rgba(5, 12, 35, 0.85) 0%,
+      rgba(5, 12, 35, 0.6)  50%,
+      rgba(5, 12, 35, 0.9)  100%
+    );
+}
+
+/* ── Contenido ── */
+.services-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.section-label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--gold-dk);
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.services-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.services-title span {
+  color: var(--gold);
+}
+
+.services-subtitle {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* ═══════════════════════════════════════════════
+   CARDS GRID
+═══════════════════════════════════════════════ */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 3.5rem;
+}
+
+@media (max-width: 900px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Card base ── */
+.service-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 2rem 1.75rem;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  cursor: default;
+
+  /* Animación de entrada */
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.55s ease var(--delay, 0ms),
+    transform 0.55s ease var(--delay, 0ms),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.service-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px var(--gold), 0 20px 40px rgba(0,0,0,0.4);
+  transform: translateY(-4px) !important;
+}
+
+/* ── Card destacada ── */
+.service-card.featured {
+  background: linear-gradient(145deg, rgba(245, 168, 0, 0.18), rgba(8, 30, 80, 0.8));
+  border-color: rgba(245, 168, 0, 0.5);
+}
+
+.service-card.featured .card-icon {
+  color: var(--gold);
+}
+
+/* ── Card icon ── */
+.card-icon {
+  width: 48px;
+  height: 48px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1.25rem;
+  transition: color 0.3s;
+}
+
+.service-card:hover .card-icon {
+  color: var(--gold);
+}
+
+.card-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Card text ── */
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.6rem;
+  color: var(--white);
+}
+
+.card-desc {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 1.25rem;
+}
+
+/* ── Card link ── */
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  transition: gap 0.25s ease;
+}
+
+.card-link:hover {
+  gap: 0.6rem;
+}
+
+.card-link span {
+  transition: transform 0.25s ease;
+}
+
+.card-link:hover span {
+  transform: translateX(3px);
+}
+
+/* ═══════════════════════════════════════════════
+   CTA
+═══════════════════════════════════════════════ */
+.services-cta {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--dark);
+  background: var(--gold);
+  padding: 1rem 2.8rem;
+  border-radius: 6px;
+  border: 2px solid var(--gold);
+  transition: background 0.25s, color 0.25s, transform 0.25s;
+}
+
+.cta-btn:hover {
+  background: transparent;
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.cta-sub {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.05em;
+}
+
+/* ═══════════════════════════════════════════════
+   LÍNEA DORADA SEPARADORA (top de services)
+═══════════════════════════════════════════════ */
+.services-section::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  z-index: 2;
+}
